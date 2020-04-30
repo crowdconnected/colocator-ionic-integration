@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 declare var ColocatorWrapper: any;
 
@@ -11,15 +12,18 @@ declare var ColocatorWrapper: any;
 
 export class HomePage {
 
-  constructor(public platform: Platform) { }
-  
+  constructor(public platform: Platform, private geolocation: Geolocation) {  
+    this.platform.ready().then(() => {
+      this.geolocation.getCurrentPosition();
+    })
+  }
+
   // Library Control
   startColocator() {
     this.platform.ready().then(() => {
-
       document.getElementById("label").innerHTML = "Starting Colocator...";
 
-      ColocatorWrapper.start("YOUR_APP_KEY", function (s) {
+      ColocatorWrapper.start("YOUR__CC_KEY", function (s) {
           document.getElementById("label").innerHTML = "Success " + s;
       }, function (e) {
         document.getElementById("label").innerHTML = "Fail " + e;
