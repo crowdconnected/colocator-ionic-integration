@@ -19,7 +19,7 @@ export class HomePage {
 
       document.getElementById("label").innerHTML = "Starting Colocator...";
 
-      ColocatorWrapper.start("iosrtest", function (s) {
+      ColocatorWrapper.start("YOUR_APP_KEY", function (s) {
           document.getElementById("label").innerHTML = "Success " + s;
       }, function (e) {
         document.getElementById("label").innerHTML = "Fail " + e;
