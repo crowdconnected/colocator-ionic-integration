@@ -1,20 +1,66 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Colocator
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Colocator</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p id="label">Status --- </p>
+    <br/>
+
+    <h4>Colocator Library Controller </h4>
+    <ion-button (click)="startColocator()">
+      Start Colocator
+    </ion-button>
+    
+    <ion-button (click)="stopColocator()">
+      Stop Colocator
+    </ion-button>
+
+    <h4>Common Methods</h4>
+    <ion-button (click)="getDeviceID()">
+      Get Device ID
+    </ion-button>
+    <ion-button (click)="addAlias()">
+      Add Alias
+    </ion-button>
+    <br/>
+    <ion-button (click)="requestLocation()">
+      Request Location
+    </ion-button>
+    <br/>
+    <ion-button (click)="registerLocationListener()">
+      Register Location Listener
+    </ion-button>
+    <br/>
+    <ion-button (click)="unregisterLocationListener()">
+      Unregister Location Listener
+    </ion-button>
+    <br/>
+
+    <h5>Platform Specific Methods</h5>
+    <ion-button (click)="startForegoundService()">
+      Start Foreground Service (Android)
+    </ion-button>
+    <ion-button (click)="triggerBluetoothPermissionPopUp()">
+      Bluetooth Popup (iOS)
+    </ion-button>
+    <ion-button (click)="triggerMotionPermissionPopUp()">
+      Motion Popup (iOS)
+    </ion-button>
+    <ion-button (click)="testLibraryIntegration()">
+      Test Library Integration (iOS)
+    </ion-button>
   </div>
+
 </ion-content>

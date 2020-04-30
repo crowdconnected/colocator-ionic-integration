@@ -1,5 +1,7 @@
 {
   "name": "ionic-cordova-colocator",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
